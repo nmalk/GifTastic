@@ -16,10 +16,31 @@ input {
     border: 1px solid;
     margin: 5px;
     color: black;
-    border-radius: 10px;
-    background-color: pink;
-    height: 25px;
+    border-radius: 55px;
+    background-image: linear-gradient(pink,red) ;
+    height: 35px;
     width: 75px;
+    outline: none;
+}
+
+.animal-btn:hover {
+    background-image:linear-gradient(red,pink); 
+}
+
+.animal-btn:active {
+    position: relative;
+    top:2px;
+}
+
+#buttons-view {
+    padding-top: 50px;
+    height: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    padding: 10px;
+    justify-content: space-around;
+    align-content: flex-start;
+    overflow: auto;
 }
 
 

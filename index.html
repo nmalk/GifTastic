@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>GifTastic</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body>
@@ -18,8 +19,14 @@
           <input id="add-animal" type="submit" value="Add an Animal!"></span>
         </form>
     
-        <div id="buttons-view"></div>
+        <div class="container" >
+          <div class="" id="buttons-view"></div>
+        </div>
     
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script type="text/javascript">
 
@@ -29,7 +36,8 @@
           var animal = $(this).attr("data-name");
 
           var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + animal + "&api_key=fDG0cT5TmQsiAR81NISOgd6DD4YLt6Ca&limit=10";
-
+            console.log("ghghgh");
+            
         $.ajax({
           url: queryURL,
           method: "GET"
@@ -53,8 +61,10 @@
       }
       $(document).on("click", ".animal-btn", displayAnimalGifs);
 
-     $(".animal-btn").on("click", function() {
-      var state = $(this).attr("data-state");
+    
+    
+     $("#buttons-view").on("click",function() {
+      var state = $(this).attr("img");
             if(state === "still") {
               $(this).attr("src", $(this).attr("data-animate"));
               $(this).attr("data-state","animate");
@@ -62,7 +72,8 @@
               $(this).attr("src", $(this).attr("data-still"));
               $(this).attr("data-state", "still");
             }
-     })
+            console.log("jhgf");
+     });
      
      
 
