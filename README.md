@@ -10,4 +10,4 @@ Click on the pre-existing buttons to populate the gifs or search and add a new b
 
 
 ## Technologies used
-JavaScript, JQuery, AJAX, Bootstrap
+HTML, CSS, JavaScript, JQuery, AJAX, Bootstrap

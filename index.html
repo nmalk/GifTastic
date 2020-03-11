@@ -48,12 +48,23 @@
           method: "GET"
         }).then(function(response) {
         var results = response.data;
+        console.log(response);
         for (var i=0; i<results.length; i++) {
           var animalDiv=$("<div>");
           var p = $("<p>").text("Rating:" + results[i].rating);
 
-          var animalImage = $("<img>");
-          animalImage.attr("src", results[i].images.fixed_height_still.url);
+          var animated = results[i].images.fixed_height.url;
+          var still = results[i].images.fixed_height_still.url;
+
+            var animalImage = $("<img>");
+
+          animalImage.attr('src', still);
+          animalImage.attr('data-still', still);
+          animalImage.attr('data-animated', animated);
+          animalImage.attr('data-state', 'still');
+          animalImage.addClass('searchImage');
+
+          // animalImage.attr("src", results[i].images.fixed_height_still.url);
           animalDiv.append(p);
           animalDiv.append(animalImage);
 
@@ -62,20 +73,20 @@
       })
       }
 
-    $(document).on("click", ".animal-btn", displayAnimalGifs);
-
-    $(".gif").on("click",function() {
-      var state = $(this).attr("img");
-            if(state === "still") {
-              $(this).attr("src", $(this).attr("data-animate"));
-              $(this).attr("data-state","animate");
-            } else {
-              $(this).attr("src", $(this).attr("data-still"));
-              $(this).attr("data-state", "still");
-            }
-            console.log("jhgf");
-    });
+$(document).on("click", ".animal-btn", displayAnimalGifs);
           
+$(document).on('click','searchImage', function(){
+  var state = $(this).attr('data-state');
+  if(state == 'still') {
+    $(this).attr('src', $(this).data('animated'));
+    $(this).attr('data-state','animated');
+  } else {
+    $(this).attr('src', $(this).data('still'));
+    $(this).attr('data-state','still'); 
+  }
+}
+)
+
           function renderButtons() {
             $("#buttons").empty();
     
