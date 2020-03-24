@@ -10,6 +10,8 @@ Click on the pre-existing buttons to populate the gifs or search and add a new b
 
 ![GifTastic](css/images/GifTasticResult.png)
 
+![GifTastic](css/images/GifTasticResult2.png)
+
 * [Try it out](https://nmalk.github.io/GifTastic/)
 
 
