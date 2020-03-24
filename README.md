@@ -6,6 +6,8 @@ This application uses GIPHY API to create a dynamic web page to populate gifs of
 ## How it works
 Click on the pre-existing buttons to populate the gifs or search and add a new button of your choice.
 
+* ![GifTastic](css/images/GifTastic.png)
+
 * [Try it out](https://nmalk.github.io/GifTastic/)
 
 
